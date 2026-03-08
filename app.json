@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "name": "GoNext",
+    "slug": "gonext",
+    "version": "1.0.0",
+    "scheme": "gonext",
+    "experiments": {
+      "typedRoutes": true
+    },
+    "sdkVersion": "54.0.0"
+  }
+}
