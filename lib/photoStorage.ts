@@ -1,9 +1,13 @@
 import * as FileSystem from 'expo-file-system';
 
+/**
+ * Унифицированное хранилище фотографий: файлы в директории приложения,
+ * пути сохраняются в БД (place_photos, trip_place_photos).
+ */
 const BASE_DIR = `${FileSystem.documentDirectory}gonext/`;
 
 /**
- * Директория для фотографий места.
+ * Директория для фотографий места (Place).
  */
 export function getPlacePhotosDir(placeId: number): string {
   return `${BASE_DIR}places/${placeId}/`;

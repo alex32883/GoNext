@@ -1,4 +1,4 @@
-import { StyleSheet, View } from 'react-native';
+import { ImageBackground, StyleSheet, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Appbar, Button } from 'react-native-paper';
 
@@ -6,11 +6,16 @@ export default function HomeScreen() {
   const router = useRouter();
 
   return (
-    <View style={styles.container}>
-      <Appbar.Header>
-        <Appbar.Content title="GoNext" />
-      </Appbar.Header>
-      <View style={styles.content}>
+    <ImageBackground
+      source={require('../assets/background/gonext-bg.png')}
+      style={styles.background}
+      resizeMode="cover"
+    >
+      <View style={styles.container}>
+        <Appbar.Header style={styles.appbar}>
+          <Appbar.Content title="GoNext" />
+        </Appbar.Header>
+        <View style={styles.content}>
         <Button
           mode="contained"
           style={styles.button}
@@ -41,12 +46,19 @@ export default function HomeScreen() {
         </Button>
       </View>
     </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+  },
   container: {
     flex: 1,
+  },
+  appbar: {
+    backgroundColor: 'rgba(255,255,255,0.85)',
   },
   content: {
     flex: 1,

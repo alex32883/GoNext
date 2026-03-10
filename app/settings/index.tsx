@@ -1,7 +1,9 @@
 import { StyleSheet, View } from 'react-native';
 import { Appbar, Text } from 'react-native-paper';
+import Constants from 'expo-constants';
 
 export default function SettingsScreen() {
+  const version = Constants.expoConfig?.version ?? '1.0.0';
   return (
     <View style={styles.container}>
       <Appbar.Header>
@@ -9,10 +11,13 @@ export default function SettingsScreen() {
       </Appbar.Header>
       <View style={styles.content}>
         <Text variant="titleLarge" style={styles.title}>
-          Экран «Настройки»
+          GoNext
         </Text>
         <Text variant="bodyMedium" style={styles.subtitle}>
-          MVP-заглушка. Здесь позже появятся настройки приложения.
+          Дневник туриста. Версия {version}
+        </Text>
+        <Text variant="bodySmall" style={styles.offline}>
+          Приложение работает полностью офлайн. Все данные хранятся локально на устройстве.
         </Text>
       </View>
     </View>
@@ -36,6 +41,12 @@ const styles = StyleSheet.create({
   subtitle: {
     textAlign: 'center',
     opacity: 0.7,
+    marginBottom: 24,
+  },
+  offline: {
+    textAlign: 'center',
+    opacity: 0.6,
+    paddingHorizontal: 32,
   },
 });
 
